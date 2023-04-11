@@ -31,7 +31,7 @@ return async(dispatch,getState)=>{
     try {
         let response=await fetch(`https://strive-benchmark.herokuapp.com/api/jobs?search=${query}&limit=20`)
         let jobslist= await response.json()
-        console.log('sono la fetch',jobslist.data)
+        //console.log('sono la fetch',jobslist.data)
         dispatch(showJobsList(jobslist.data))
     } catch (error) {
         console.log(error)
