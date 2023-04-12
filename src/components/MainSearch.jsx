@@ -9,7 +9,7 @@ const MainSearch = () => {
   const [query, setQuery] = useState('')
   //const [jobs, setJobs] = useState([])
   const jobs=useSelector((state)=>{
-    return state.joblist.list
+    return state.franco.joblist.list
   })
   const dispatch=useDispatch()
 
@@ -48,7 +48,7 @@ const MainSearch = () => {
             />
           </Form>
         </Col>
-        {jobs && (<Col xs={10} className="mx-auto mb-5">
+        {jobs.length>0 && (<Col xs={10} className="mx-auto mb-5">
           {jobs.map((jobData) => (
             <Job key={jobData._id} data={jobData} />
           ))}
